@@ -1,0 +1,96 @@
+function temporizador() {
+  const texto = document.getElementById("texto");
+  const startButton = document.getElementById("startButton");
+  const section = document.getElementById("section");
+  const heart = document.getElementById("heart");
+
+  startButton.addEventListener("click", () => {
+    let tempo = 4;
+    texto.textContent =
+      " Não somos perfeitos, mas fazemos de tudo para ser perfeito para você...";
+    startButton.style.display = "none";
+
+    const intervalo = setInterval(() => {
+      tempo--;
+      if (tempo <= 0) {
+        section.style.display = "none";
+    loadImage();
+        clearInterval(intervalo);
+      } else if (tempo === 3) {
+        texto.textContent = "estaremos sempre aqui por você...";
+      } else if (tempo === 2) {
+        texto.textContent = "nossa vida é mais perfeita com você nela...";
+      } else if (tempo === 1) {
+        texto.textContent = "te amamos!";
+      }
+    }, 3500);
+  });
+}
+
+const imgArray = [
+  "0A299C38-DA2E-4635-A14E-9E0FB2292559.JPG",
+  "0AC06AE1-ACF0-4B83-A1CE-E32942D08869.JPG",
+  "1A01D0DD-2C86-4CB8-B0C8-F9E71B1A90B5.JPG",
+  "2ABA8480-2A1E-43B3-B6C5-389099D70F4A.JPG",
+  "2C5143C5-8FE8-4858-BD15-B84136D7182E.JPG",
+  "2D6EEA15-D4DA-4AD1-871E-D3D39C2A8D13.JPG",
+  "2E45E4AD-C4C9-4335-B7FC-7E980C728000.JPG",
+  "5EC2F921-27F3-4957-A40C-82123F97E134.JPG",
+  "5F187027-1AB5-4186-AC6C-EEE89AFB8B78.JPG",
+  "7B290835-0DF4-4C34-BB04-7D36C0B49830.JPG",
+  "9DDC2436-2A1F-4446-978F-959008C0D60F.JPG",
+  "21AB80D7-5BBF-4AE1-BECB-554ED2C243CC.JPG",
+  "91E0053B-61D3-4E97-8BAA-5AD5A947D245.JPG",
+  "92A9EEA5-CF8F-4555-A78A-ED0409E1308A.JPG",
+  "459EE5C1-04F4-470F-9073-FD67C00D1229.JPG",
+  "543C556C-5546-49B5-BBAF-2169C853AA08.JPG",
+  "622FFF4A-C2E8-4839-8DD2-D3C945563210.JPG",
+  "840D924C-CFF9-476E-AAA5-1E7E4CADCD4E.JPG",
+  "1239FFE4-F6DE-44AD-AF50-D2E656EA89F9.JPG",
+  "5684ED43-F702-4D97-B7D4-FDD5CE2AAA85.JPG",
+  "7808A1A6-2BCC-46E7-B1AA-3AB5C9C80584.JPG",
+  "599870CA-302E-4329-A692-3E64FF0DD083.JPG",
+  "616364C5-51D9-43AA-8B5B-199BB46E3869.JPG",
+  "736430D6-CBAD-442A-9F90-480DBDCF1321.JPG",
+  "849185D1-38AF-423F-BA96-A70ECD2C1820.JPG",
+  "865314BF-30DF-481D-9CAF-C48E7D7091DC.JPG",
+  "2115644B-DFD6-431C-9A24-13BA5B0E01B1.JPG",
+  "2722972C-2BF2-40C1-9007-EC1BDFC6B0E4.JPG",
+  "66037970-B476-4EB7-8D6E-495F31E3A8FD.JPG",
+  "A4EB3409-AF0A-4979-B0A8-3BEFBC29CABC.JPG",
+  "A5DBFA38-FA64-4E79-B4D2-D4B4A410638D.JPG",
+  "A3526F39-EFE0-407E-8CD8-4C6716029800.JPG",
+  "ADC4CD2B-0CE1-4CD6-AF46-19B31CE72803.JPG",
+  "AE0326B3-6C8B-4D67-8D81-71F49FE58FCA.JPG",
+  "AE1309C1-00B7-471F-A719-9B511738F30E.JPG",
+  "B1F5CDB4-4A47-4D94-8618-8A863F751167.JPG",
+  "B51CA502-4958-4CD0-AE8D-3F4A0AEDEE14.JPG",
+  "B29593A8-F7AF-417F-84D2-A54F23538A32.JPG",
+  "BB2B3060-01FA-4F48-AF8C-DDC4BB362DBB.JPG",
+  "CD5A9D26-0A2C-4576-9227-E5D2254D7EE8.JPG",
+  "D27FA040-2404-4F59-86A7-23D5F6A4C6A9.JPG",
+  "D756783F-D16C-4BC0-A8C6-D1ADA4BD7A59.JPG",
+  "DCBABA5C-7A04-4B4C-B13D-40B8DCADF04D.JPG",
+  "DDAAC1F8-242D-4DB6-8189-8AA1DA9BD574.JPG",
+  "E3D89CDE-B577-425B-B3B6-42DAE8FDE525.JPG",
+  "E48EF32D-8149-4F04-BC24-B2923D8472F4.JPG",
+  "E932A404-8C8D-4E08-8250-1BFED39C7E8A.JPG",
+  "EB337666-B2B1-4D76-A420-DD63BB27ED8A.JPG",
+  "EF08816A-D766-4C8D-AAFA-BBCC8E689DE7.JPG",
+  "F5A25B4F-7A7C-45FD-B164-A184A450C3BD.JPG",
+  "F22C8B8A-1036-4B6F-B4C2-9913EE744E77.JPG",
+];
+
+function loadImage() {
+  const container = document.getElementById("gallery");
+
+  imgArray.forEach((name) => {
+    const img = document.createElement("img");
+    img.src = `img/${name}`;
+    img.alt = name;
+    container.appendChild(img);
+  });
+}
+
+temporizador();
+
