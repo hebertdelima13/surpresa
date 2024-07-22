@@ -2,7 +2,7 @@ function temporizador() {
   const texto = document.getElementById("texto");
   const startButton = document.getElementById("startButton");
   const section = document.getElementById("section");
-  const heart = document.getElementById("heart");
+  const gallery = document.getElementById("gallery");
 
   startButton.addEventListener("click", () => {
     let tempo = 4;
@@ -14,6 +14,7 @@ function temporizador() {
       tempo--;
       if (tempo <= 0) {
         section.style.display = "none";
+        gallery.style.display = "flex"
     loadImage();
         clearInterval(intervalo);
       } else if (tempo === 3) {
@@ -86,9 +87,12 @@ function loadImage() {
 
   imgArray.forEach((name) => {
     const img = document.createElement("img");
+    const div = document.createElement("div")
     img.src = `img/${name}`;
     img.alt = name;
-    container.appendChild(img);
+    div.className = 'col'
+    div.appendChild(img)
+    container.appendChild(div);
   });
 }
 

@@ -33,19 +33,19 @@ section {
     justify-content: center;
     flex-direction: column;
 }
-section #gallery {
-    margin-top: 10rem;
-    margin-left: 1rem;
+
+#gallery {
+    display: none;
 }
 
 #gallery img {
-    height: 100px;
+    height: 150px;
     padding: 3px;
     transition: ease-out .5s;
 }
 
 #gallery img:hover {
-    transform: scale(2);
+    transform: scale(1.5);
 }
 
 button {
